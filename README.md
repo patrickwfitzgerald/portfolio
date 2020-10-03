@@ -1,0 +1,15 @@
+# Data Analysis Portfolio
+This repository contains data analysis projects stored as Jupyter Notebooks.
+
+## Exploratory Data Analysis in Python
+This [notebook](https://nbviewer.jupyter.org/github/patrickwfitzgerald/portfolio/blob/master/exploratory-data-analysis-python/Exploratory%20Data%20Analysis%20in%20Python.ipynb) illustrates the process of exploratory data analysis with Jupyter Notebook using Python. A sample dataset from the seaborn package is analyzed using a systematic approach to visualize the distribution of variables and associations between variables. This approach can be applied to any other dataset containing similar types of variables.
+
+## License
+
+### Code
+The code in this repository is released under a [MIT license](LICENSE-CODE). Read more [here](https://choosealicense.com/licenses/mit/).
+
+### Text
+The text content contained in the Jupyter Notebook files is released under a [Creative Commons Attribution 4.0 International License](LICENSE-TEXT). Read more at [Creative Commons](https://creativecommons.org/licenses/by/4.0/).
+[![CC BY 4.0][cc-by-image]](http://creativecommons.org/licenses/by/4.0/)
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
