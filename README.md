@@ -10,6 +10,8 @@ This [notebook](https://nbviewer.jupyter.org/github/patrickwfitzgerald/portfolio
 The code in this repository is released under a [MIT license](LICENSE-CODE). Read more [here](https://choosealicense.com/licenses/mit/).
 
 ### Text
-The text content contained in the Jupyter Notebook files is released under a [Creative Commons Attribution 4.0 International License](LICENSE-TEXT). Read more at [Creative Commons](https://creativecommons.org/licenses/by/4.0/).
-[![CC BY 4.0][cc-by-image]](http://creativecommons.org/licenses/by/4.0/)
+The text content contained in the Jupyter Notebook files is released under a [Creative Commons Attribution 4.0 International License](LICENSE-TEXT). Read more at [Creative Commons][cc-by].
+[![CC BY 4.0][cc-by-image]][cc-by]
+
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
 [cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
