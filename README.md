@@ -11,6 +11,7 @@ The code in this repository is released under a [MIT license](LICENSE-CODE). Rea
 
 ### Text
 The text content contained in the Jupyter Notebook files is released under a [Creative Commons Attribution 4.0 International License](LICENSE-TEXT). Read more at [Creative Commons][cc-by].
+
 [![CC BY 4.0][cc-by-image]][cc-by]
 
 [cc-by]: http://creativecommons.org/licenses/by/4.0/
