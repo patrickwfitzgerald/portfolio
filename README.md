@@ -16,7 +16,7 @@ Open notebook: [html][html_EF], [nbviewer][nbviewer_EF], [GitHub][GitHub_EF]
 This notebook analyzes the ecological footprint of countries worldwide in relation to their score on the Human Development Index. Data is imported through the Global Footprint Network API and merged with other data sources for the analysis.
 
 [html_EF]: https://rawcdn.githack.com/patrickwfitzgerald/portfolio/f2cb1bd869a1ebe711494d1e715a71600633dcb4/ecological-footprint-countries/html%20file/Ecological%20Footprint%20and%20Human%20Development%20Index%202016.html
-[nbviewer_EF]: https://nbviewer.jupyter.org/github/patrickwfitzgerald/portfolio/blob/f2cb1bd869a1ebe711494d1e715a71600633dcb4/ecological-footprint-countries/Ecological%20Footprint%20and%20Human%20Development%20Index.ipynb
+[nbviewer_EF]: https://nbviewer.jupyter.org/github/patrickwfitzgerald/portfolio/blob/9a2b0eef31343ef17c012e8743d0dd14ff542906/ecological-footprint-countries/Ecological%20Footprint%20and%20Human%20Development%20Index.ipynb
 [GitHub_EF]: https://github.com/patrickwfitzgerald/portfolio/blob/main/ecological-footprint-countries/Ecological%20Footprint%20and%20Human%20Development%20Index.ipynb
 
 
