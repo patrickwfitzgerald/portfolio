@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>Ecological Footprint and Human Development Index 2016</title>
+<title>Ecological Footprint and Human Development Index</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13158,7 +13158,7 @@ li{
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Introduction" data-toc-modified-id="Introduction-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Introduction</a></span></li><li><span><a href="#Data-extraction-and-preparation" data-toc-modified-id="Data-extraction-and-preparation-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Data extraction and preparation</a></span><ul class="toc-item"><li><span><a href="#Import-Ecological-Footprint-and-HDI-data-through-API" data-toc-modified-id="Import-Ecological-Footprint-and-HDI-data-through-API-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Import Ecological Footprint and HDI data through API</a></span></li><li><span><a href="#Import-list-of-independent-States-by-scraping-online-HTML-table" data-toc-modified-id="Import-list-of-independent-States-by-scraping-online-HTML-table-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Import list of independent States by scraping online HTML table</a></span></li><li><span><a href="#Import-list-of-countries-with-regions-from-GitHub-repository" data-toc-modified-id="Import-list-of-countries-with-regions-from-GitHub-repository-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Import list of countries with regions from GitHub repository</a></span></li></ul></li><li><span><a href="#Data-analysis" data-toc-modified-id="Data-analysis-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Data analysis</a></span><ul class="toc-item"><li><span><a href="#Ecological-Footprint-by-continent" data-toc-modified-id="Ecological-Footprint-by-continent-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Ecological Footprint by continent</a></span></li><li><span><a href="#Human-Development-Index-by-continent" data-toc-modified-id="Human-Development-Index-by-continent-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Human Development Index by continent</a></span></li><li><span><a href="#Ecological-Footprint-vs-Human-Development-Index" data-toc-modified-id="Ecological-Footprint-vs-Human-Development-Index-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Ecological Footprint vs Human Development Index</a></span></li><li><span><a href="#Development-efficiency" data-toc-modified-id="Development-efficiency-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Development efficiency</a></span></li></ul></li><li><span><a href="#Conclusion" data-toc-modified-id="Conclusion-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Conclusion</a></span></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Introduction" data-toc-modified-id="Introduction-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Introduction</a></span></li><li><span><a href="#Data-extraction-and-preparation" data-toc-modified-id="Data-extraction-and-preparation-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Data extraction and preparation</a></span><ul class="toc-item"><li><span><a href="#Import-data-through-the-GFN-API" data-toc-modified-id="Import-data-through-the-GFN-API-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Import data through the GFN API</a></span></li><li><span><a href="#Import-list-of-independent-States-by-scraping-online-HTML-table" data-toc-modified-id="Import-list-of-independent-States-by-scraping-online-HTML-table-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Import list of independent States by scraping online HTML table</a></span></li><li><span><a href="#Import-list-of-countries-with-regions-from-GitHub-repository" data-toc-modified-id="Import-list-of-countries-with-regions-from-GitHub-repository-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Import list of countries with regions from GitHub repository</a></span></li></ul></li><li><span><a href="#Data-analysis" data-toc-modified-id="Data-analysis-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Data analysis</a></span><ul class="toc-item"><li><span><a href="#Ecological-Footprint-by-continent" data-toc-modified-id="Ecological-Footprint-by-continent-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Ecological Footprint by continent</a></span></li><li><span><a href="#Human-Development-Index-by-continent" data-toc-modified-id="Human-Development-Index-by-continent-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Human Development Index by continent</a></span></li><li><span><a href="#Ecological-Footprint-vs-Human-Development-Index" data-toc-modified-id="Ecological-Footprint-vs-Human-Development-Index-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Ecological Footprint vs Human Development Index</a></span></li><li><span><a href="#Development-efficiency" data-toc-modified-id="Development-efficiency-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Development efficiency</a></span></li></ul></li><li><span><a href="#Conclusion" data-toc-modified-id="Conclusion-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Conclusion</a></span></li></ul></div>
 </div>
 </div>
 </div>
@@ -13173,9 +13173,9 @@ li{
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The goal of this data analysis is to study the relationship between the ecological footprint (EF) and the Human Development Index (HDI) of countries worldwide using the latest data available which dates from 2016 (as of October 2020).</p>
-<p>The EF measures the surface area needed to provide the resources necessary to meet consumer demand in any given country. This includes the surface area used for food crops, fiber production, timber regeneration, absorption of  carbon dioxide emissions from fossil fuel burning, and built infrastructure. Imports and exports are taken into account. Further details can be found <a href="https://www.footprintnetwork.org/resources/data/">here</a>. It is provided by the <em>Global Footprint Network</em> (GFN), a non-profit organization whose mission is to help end ecological overshoot by making ecological limits central to decision-making.</p>
+<p>The EF measures the surface area needed to provide the resources necessary to meet consumer demand in any given country. This includes the surface area used for food crops, fiber production, timber regeneration, absorption of  carbon dioxide emissions from fossil fuel burning, and built infrastructure. Imports and exports are taken into account. Further details can be found <a href="https://www.footprintnetwork.org/resources/data/">here</a>. This indicator is provided by the <em>Global Footprint Network</em> (GFN), a non-profit organization whose mission is to help end ecological overshoot by making ecological limits central to decision-making.</p>
 <p>The HDI measures the level of development of a country by combining indices that assess three key dimensions: health, education and standard of living. Health is assessed by life expectancy at birth, education is measured by mean of years of schooling for adults aged 25 years and more and expected years of schooling for children of school entering age. Standard of living is measured by gross national income per capita. Further details can be found <a href="http://hdr.undp.org/en/content/human-development-index-hdi">here</a>. The HDI is calculated by the <em>United Nations Development Programme</em> using data from various sources.</p>
-<p>This notebook presents the entire data analysis process starting with the extraction of the raw data from online sources, followed by data preparation operations and finishing with a few descriptive graphs, the one of key interest being a scatterplot illustrating the relationship betweenship ecological footprint and the HDI for countries worldwide.</p>
+<p>This notebook presents the entire data analysis process starting with the extraction of the raw data from online sources, followed by data preparation operations and finishing with a few descriptive graphs, the one of key interest being the scatterplot showing the relationship betweenship ecological footprint and the HDI for countries worldwide.</p>
 
 </div>
 </div>
@@ -13185,7 +13185,7 @@ li{
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import packages</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import packages and set package parameters</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
@@ -13194,11 +13194,10 @@ li{
 <span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">floor</span><span class="p">,</span> <span class="n">ceil</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">mode</span><span class="o">.</span><span class="n">chained_assignment</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># hide pandas SettingWithCopyWarning</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;precision&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># limit number of significant figures displayed in outputs</span>
-<span class="c1"># pd.set_option(&#39;display.max_rows&#39;, None) # display full pd.DataFrame</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;precision&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Limit number of significant figures displayed in outputs</span>
+<span class="c1"># pd.set_option(&#39;display.max_rows&#39;, None) # Display full pd.DataFrame</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="c1"># set default figure size in inches (width, height)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="c1"># Set default figure size in inches (width, height)</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 </pre></div>
@@ -13218,7 +13217,7 @@ li{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Import-Ecological-Footprint-and-HDI-data-through-API">Import Ecological Footprint and HDI data through API<a class="anchor-link" href="#Import-Ecological-Footprint-and-HDI-data-through-API">&#182;</a></h2>
+<h2 id="Import-data-through-the-GFN-API">Import data through the GFN API<a class="anchor-link" href="#Import-data-through-the-GFN-API">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -13236,11 +13235,10 @@ li{
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># set API key and username needed for authentication to access the GFN API</span>
-<span class="c1"># os.chdir(&#39;C:\Google Drive\Interests\Data Analysis\Projects\ecological-footprint-countries&#39;)</span>
-<span class="kn">import</span> <span class="nn">config</span> <span class="c1"># script file containing confidential authentication details</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Set API key and username needed for authentication to access the GFN API</span>
+<span class="kn">import</span> <span class="nn">config</span> <span class="c1"># Script file containing confidential authentication details</span>
 <span class="n">api_key</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">api_key</span> <span class="c1"># API key received from the GFN by email</span>
-<span class="n">user_agent</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">user_agent</span> <span class="c1"># user name which can be any string</span>
+<span class="n">user_agent</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">user_agent</span> <span class="c1"># User name which can be any string</span>
 </pre></div>
 
     </div>
@@ -13261,10 +13259,11 @@ li{
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># extract list of available types of indicators and check that API access is successful</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Extract list of available types of indicators and check that API</span>
+<span class="c1"># access is successful</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://api.footprintnetwork.org/v1/types&#39;</span>
 <span class="n">request_types</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">user_agent</span><span class="p">,</span> <span class="n">api_key</span><span class="p">))</span>
-<span class="n">request_types</span><span class="o">.</span><span class="n">status_code</span> <span class="c1"># check that request is successful, HTTP status code: 200</span>
+<span class="n">request_types</span><span class="o">.</span><span class="n">status_code</span> <span class="c1"># Check that request is successful: HTTP code = 200</span>
 </pre></div>
 
     </div>
@@ -13297,7 +13296,7 @@ li{
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># display json file contents listing available indicators</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Display json file contents listing available indicators</span>
 <span class="n">types_json</span> <span class="o">=</span> <span class="n">request_types</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="n">df_types</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">types_json</span><span class="p">)</span>
 <span class="n">df_types</span>
@@ -13451,8 +13450,10 @@ li{
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># extract data on population, ecological footprint (in terms of number of Earths), and the Human Development Index</span>
-<span class="n">request_ef2016</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://api.footprintnetwork.org/v1/data/all/2016/pop,earth,hdi&#39;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">user_agent</span><span class="p">,</span> <span class="n">api_key</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Extract data on population, ecological footprint (in terms of number</span>
+<span class="c1"># of Earths), and the Human Development Index</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://api.footprintnetwork.org/v1/data/all/2016/pop,earth,hdi&#39;</span>
+<span class="n">request_ef2016</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">user_agent</span><span class="p">,</span> <span class="n">api_key</span><span class="p">))</span>
 <span class="n">request_ef2016</span><span class="o">.</span><span class="n">status_code</span>
 </pre></div>
 
@@ -13766,7 +13767,7 @@ li{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <em>record</em> column shows that the values of three variables of interest are contained on different lines. Country names and the ISO 3166-1 alpha-2 country codes are also needed to merge different datasets.</p>
+<p>The <em>record</em> column shows that the values of three variables of interest are contained on different lines of the <em>value</em> column. Country names and the ISO 3166-1 alpha-2 country codes are also needed for merging with other datasets later on.</p>
 
 </div>
 </div>
@@ -13776,7 +13777,7 @@ li{
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># select columns of interest</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Select columns of interest</span>
 <span class="n">df_ef2016_select</span> <span class="o">=</span> <span class="n">df_ef2016_raw</span><span class="p">[[</span><span class="s1">&#39;shortName&#39;</span><span class="p">,</span> <span class="s1">&#39;isoa2&#39;</span><span class="p">,</span> <span class="s1">&#39;record&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">]]</span>
 <span class="n">df_ef2016_select</span>
 </pre></div>
@@ -13964,7 +13965,7 @@ memory usage: 19.8+ KB
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># pivot table, reset index and rename columns</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Pivot table, reset index and rename columns</span>
 <span class="n">df_ef2016_pivot</span> <span class="o">=</span> <span class="n">df_ef2016_select</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;shortName&#39;</span><span class="p">,</span><span class="s1">&#39;isoa2&#39;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;record&#39;</span><span class="p">],</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">df_ef2016_pivot</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;Earths&#39;</span><span class="p">,</span> <span class="s1">&#39;HDI&#39;</span><span class="p">,</span> <span class="s1">&#39;population&#39;</span><span class="p">]</span>
 <span class="n">df_ef2016_pivot</span>
@@ -14156,7 +14157,8 @@ memory usage: 7.4+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The dataset contains data on 187 countries, of which 12 are missing a value for the HDI. We can have a quick look at these variables are distributed.</p>
+<p>The dataset contains data on 187 countries, of which 12 are missing a value for the HDI (shown in a later section).</p>
+<p>We can now look at how <em>Earths</em> and <em>HDI</em> are distributed.</p>
 
 </div>
 </div>
@@ -14166,15 +14168,16 @@ memory usage: 7.4+ KB
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create histogram function</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create histogram function</span>
 <span class="k">def</span> <span class="nf">hist_align_bins</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">xlabel</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">bin_width</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Create a histogram with bins of a selected width and overlaid with a kernel</span>
-<span class="sd">    density estimator.</span>
+<span class="sd">    Create a histogram with bins of a selected width and overlaid with a</span>
+<span class="sd">    kernel density estimator.</span>
 <span class="sd">    </span>
-<span class="sd">    A list of bins for the histogram &#39;bins&#39; argument is created based on the</span>
-<span class="sd">    range of the variable scores and on the selected width of bins. The bins are</span>
-<span class="sd">    automatically aligned with round units making the histogram more readable.</span>
+<span class="sd">    A list of bins for the histogram &#39;bins&#39; argument is created based on </span>
+<span class="sd">    the range of the variable scores and on the selected width of bins.</span>
+<span class="sd">    The bins are automatically aligned with round units making the</span>
+<span class="sd">    histogram more readable.</span>
 <span class="sd">    </span>
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -14188,37 +14191,46 @@ memory usage: 7.4+ KB
 <span class="sd">        Width of histogram bins in the units of the variable.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
-    <span class="c1"># create list of bins based on the range of values of the variable</span>
+    <span class="c1"># Create list of bins based on the range of values of the variable</span>
     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span><span class="o">-</span><span class="nb">min</span><span class="p">(</span><span class="n">variable</span><span class="p">))</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">exponent</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">variable</span><span class="p">)))</span>
         <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">stop</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="n">exponent</span>
+        <span class="n">stop</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="n">ceil</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">variable</span><span class="p">)))</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">exponent</span> <span class="o">=</span> <span class="n">floor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span><span class="o">-</span><span class="nb">min</span><span class="p">(</span><span class="n">variable</span><span class="p">)))</span>
-        <span class="n">start</span> <span class="o">=</span> <span class="n">floor</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span><span class="o">**</span><span class="n">exponent</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="n">exponent</span>
-        <span class="n">stop</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span><span class="o">**</span><span class="n">exponent</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="n">exponent</span> <span class="o">+</span> <span class="n">bin_width</span>
+        <span class="n">rounding_factor</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="n">floor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span><span class="o">-</span><span class="nb">min</span><span class="p">(</span><span class="n">variable</span><span class="p">)))</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">floor</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span><span class="o">/</span><span class="n">rounding_factor</span><span class="p">)</span><span class="o">*</span><span class="n">rounding_factor</span>
+        <span class="n">stop</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span><span class="o">/</span><span class="n">rounding_factor</span><span class="p">)</span><span class="o">*</span><span class="n">rounding_factor</span> <span class="o">+</span> <span class="n">bin_width</span>
 
     <span class="n">bins_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">bin_width</span><span class="p">)</span>
-    <span class="n">bins_list</span> <span class="o">=</span> <span class="n">bins_range</span><span class="p">[(</span><span class="n">bins_range</span> <span class="o">&gt;=</span> <span class="nb">min</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">bin_width</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">bins_range</span> <span class="o">&lt;=</span> <span class="nb">max</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">bin_width</span><span class="p">)]</span>
+    <span class="n">bins_list</span> <span class="o">=</span> <span class="n">bins_range</span><span class="p">[(</span><span class="n">bins_range</span> <span class="o">&gt;=</span> <span class="nb">min</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">bin_width</span><span class="p">)</span> <span class="o">&amp;</span>\
+                           <span class="p">(</span><span class="n">bins_range</span> <span class="o">&lt;=</span> <span class="nb">max</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">bin_width</span><span class="p">)]</span>
     
-    <span class="c1"># draw seaborn histogram</span>
+    <span class="c1"># Draw seaborn histogram</span>
     <span class="n">ax_hist</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins_list</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                           <span class="n">hist_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;alpha&#39;</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">,</span> <span class="s1">&#39;edgecolor&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">),</span> <span class="s1">&#39;linewidth&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+                           <span class="n">hist_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;alpha&#39;</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">,</span>
+                                     <span class="s1">&#39;edgecolor&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">),</span>
+                                     <span class="s1">&#39;linewidth&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
     
-    <span class="c1"># draw seaborn kde plot on top of histogram with new ax to preserve histogram y axis scale</span>
-    <span class="c1"># note: code to be updated once anaconda updates seaborn package to v0.11 where histplot function simplifies this issue</span>
+    <span class="c1"># Draw seaborn kde plot on top of histogram with new ax to preserve</span>
+    <span class="c1"># histogram y axis scale</span>
+    <span class="c1"># Note: code to be updated once anaconda updates seaborn package to</span>
+    <span class="c1"># v0.11 where histplot function simplifies this issue</span>
     <span class="n">ax_kde</span> <span class="o">=</span> <span class="n">ax_hist</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
-    <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax_kde</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;kernel density estimator&#39;</span><span class="p">)</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax_kde</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;kernel density estimator&#39;</span><span class="p">)</span>
     <span class="n">ax_kde</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
     
-    <span class="c1"># additional formatting</span>
+    <span class="c1"># Additional formatting</span>
     <span class="n">ax_hist</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">xlabel</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
     <span class="n">ax_hist</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">()</span>
 
-<span class="n">hist_align_bins</span><span class="p">(</span><span class="n">variable</span><span class="o">=</span><span class="n">df_ef2016_pivot</span><span class="p">[</span><span class="s1">&#39;Earths&#39;</span><span class="p">],</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Earths&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Distribution of Ecological Footprint scores&#39;</span><span class="p">,</span> <span class="n">bin_width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="c1"># Draw Earths histogram</span>
+<span class="n">hist_align_bins</span><span class="p">(</span><span class="n">variable</span><span class="o">=</span><span class="n">df_ef2016_pivot</span><span class="p">[</span><span class="s1">&#39;Earths&#39;</span><span class="p">],</span>
+                <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Earths&#39;</span><span class="p">,</span>
+                <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Distribution of Ecological Footprint scores&#39;</span><span class="p">,</span>
+                <span class="n">bin_width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14247,20 +14259,13 @@ memory usage: 7.4+ KB
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Overall, the top 10 and bottom 10 countries are the following:</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_ef2016_pivot</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;Earths&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Earths top 10 countries</span>
+<span class="n">df_ef2016_pivot</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;Earths&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14395,12 +14400,21 @@ memory usage: 7.4+ KB
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The list contains mainly fossil fuel producing countries with the exceptions of Luxembourg and Bermuda. As a wealthy country, Luxembourg has a high per capita consumption level and it also experiences a <a href="https://web.archive.org/web/20200204044407/https://today.rtl.lu/news/luxembourg/a/1412471.html">high level of tank tourism</a>. Bermuda also is a wealthy country with a high per capita consumption level and it additionaly relies heavily on fossil fuels for all its <a href="https://www.worlddata.info/america/bermuda/energy-consumption.php">energy needs</a>.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_ef2016_pivot</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;Earths&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Earths bottom 10 countries</span>
+<span class="n">df_ef2016_pivot</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;Earths&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14540,7 +14554,11 @@ memory usage: 7.4+ KB
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hist_align_bins</span><span class="p">(</span><span class="n">variable</span><span class="o">=</span><span class="n">df_ef2016_pivot</span><span class="p">[</span><span class="s1">&#39;HDI&#39;</span><span class="p">],</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;HDI&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Distribution of HDI scores&#39;</span><span class="p">,</span> <span class="n">bin_width</span><span class="o">=</span><span class="mf">0.025</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Draw HDI histogram</span>
+<span class="n">hist_align_bins</span><span class="p">(</span><span class="n">variable</span><span class="o">=</span><span class="n">df_ef2016_pivot</span><span class="p">[</span><span class="s1">&#39;HDI&#39;</span><span class="p">],</span>
+                <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;HDI&#39;</span><span class="p">,</span>
+                <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Distribution of HDI scores&#39;</span><span class="p">,</span>
+                <span class="n">bin_width</span><span class="o">=</span><span class="mf">0.025</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14854,7 +14872,7 @@ memory usage: 7.4+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To get a better understanding of how much of the world is covered in the dataset, we can compare the countries listed in the dataset to a list of countries considered to be independent States.</p>
+<p>To get a better understanding of how much of the world is covered in the dataset, we can compare the countries listed in the dataset to a comprehensive list of countries considered to be independent States.</p>
 
 </div>
 </div>
@@ -14870,8 +14888,8 @@ memory usage: 7.4+ KB
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A list of independent States will be used as reference to better understand the coverage of the available data, with the assumption that countries or territories that are not independent are small in size and therefore have less impact on the global consumption of resources.</p>
-<p>The list of <a href="https://www.state.gov/independent-states-in-the-world/">Independent States in the World</a> published by the Unites States Department of State (USDS) will be used as reference. It includes GENC country codes which are based on the ISO 3166 country code standard and will be used to merge with the other dataset. This data is in the <a href="https://www.state.gov/copyright-information/">public domain</a> and may be copied and distributed without permission.</p>
-<p>The USDS <a href="https://www.state.gov/robots.txt">allows scraping of its website</a> but for some reason the function <em>pd.read_html(url)</em> does not work on this page so the BeautifulSoup package is used here instead.</p>
+<p>The list of <a href="https://www.state.gov/independent-states-in-the-world/">Independent States in the World</a> published by the United States Department of State (USDS) will be used as reference. It includes GENC country codes which are based on the ISO 3166 country code standard and will be used to merge with the other dataset. This data is in the <a href="https://www.state.gov/copyright-information/">public domain</a> and may be copied and distributed without permission.</p>
+<p>The USDS <a href="https://www.state.gov/robots.txt">allows scraping of its website</a> but for some reason the pandas function <em>pd.read_html(url)</em> does not work on this page so the BeautifulSoup package is used here instead.</p>
 
 </div>
 </div>
@@ -14881,7 +14899,7 @@ memory usage: 7.4+ KB
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># check that webpage access is successful</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check that webpage access is successful</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.state.gov/independent-states-in-the-world/&#39;</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">response</span><span class="o">.</span><span class="n">status_code</span>
@@ -14917,10 +14935,11 @@ memory usage: 7.4+ KB
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># code based on https://www.pluralsight.com/guides/extracting-data-html-beautifulsoup and https://www.kite.com/python/examples/4420/beautifulsoup-parse-an-html-table-and-write-to-a-csv</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Scrape table, code based on pluralsight.com/guides/extracting-data-html-beautifulsoup</span>
+<span class="c1"># and kite.com/python/examples/4420/beautifulsoup-parse-an-html-table-and-write-to-a-csv</span>
 
 <span class="n">html_content</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
-<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_content</span><span class="p">)</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="s1">&#39;lxml&#39;</span><span class="p">)</span>
 <span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">)</span>
 
 <span class="n">output_rows</span> <span class="o">=</span> <span class="p">[]</span>
@@ -14931,8 +14950,8 @@ memory usage: 7.4+ KB
         <span class="n">output_row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">column</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
     <span class="n">output_rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">output_row</span><span class="p">)</span>
 
-<span class="n">df_countries_USDS_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">output_rows</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">columns</span><span class="o">=</span><span class="n">output_rows</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">df_countries_USDS_raw</span>
+<span class="n">df_USDS_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">output_rows</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">columns</span><span class="o">=</span><span class="n">output_rows</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">df_USDS_raw</span>
 </pre></div>
 
     </div>
@@ -15076,14 +15095,22 @@ memory usage: 7.4+ KB
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are 195 independent States according to the USDS.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_countries_USDS</span> <span class="o">=</span> <span class="n">df_countries_USDS_raw</span><span class="p">[[</span><span class="s1">&#39;Short-form name&#39;</span><span class="p">,</span> <span class="s1">&#39;GENC 2A Code (see Note 2)&#39;</span><span class="p">]]</span>
-<span class="n">df_countries_USDS</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;country_USDS&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">]</span>
-<span class="n">df_countries_USDS</span><span class="p">[</span><span class="mi">30</span><span class="p">:</span><span class="mi">60</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_USDS</span> <span class="o">=</span> <span class="n">df_USDS_raw</span><span class="p">[[</span><span class="s1">&#39;Short-form name&#39;</span><span class="p">,</span> <span class="s1">&#39;GENC 2A Code (see Note 2)&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df_USDS</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;country_USDS&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">]</span>
+<span class="n">df_USDS</span><span class="p">[</span><span class="mi">30</span><span class="p">:</span><span class="mi">60</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -15298,18 +15325,24 @@ memory usage: 7.4+ KB
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># remove extra characters and notes from country names</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Remove extra characters and notes from country names</span>
 
-<span class="c1"># remove &#39;(see note [digit])&#39;</span>
-<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">df_countries_USDS</span><span class="p">[</span><span class="s1">&#39;country_USDS&#39;</span><span class="p">]:</span>
+<span class="c1"># Remove &#39;(see note [digit])&#39;</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">df_USDS</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;country_USDS&#39;</span><span class="p">]:</span>
     <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[0-9]&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="n">df_countries_USDS</span><span class="p">[</span><span class="s1">&#39;country_USDS&#39;</span><span class="p">][</span><span class="n">df_countries_USDS</span><span class="p">[</span><span class="s1">&#39;country_USDS&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span><span class="p">[:</span><span class="o">-</span><span class="mi">13</span><span class="p">]</span>
+        <span class="n">df_USDS</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;country_USDS&#39;</span><span class="p">][</span><span class="n">df_USDS</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;country_USDS&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span><span class="p">[:</span><span class="o">-</span><span class="mi">13</span><span class="p">]</span>
 
-<span class="c1"># remove &#39;\n&#39; and *+ and white spaces</span>
-<span class="n">df_countries_USDS</span><span class="p">[</span><span class="s1">&#39;country_USDS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_countries_USDS</span><span class="p">[</span><span class="s1">&#39;country_USDS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39; *+&#39;</span><span class="p">)</span>
+<span class="c1"># Remove &#39;\n&#39; &#39;*+&#39; white spaces and no-break space left of Eswatini</span>
+<span class="n">df_USDS</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;country_USDS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_USDS</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;country_USDS&#39;</span><span class="p">]</span>\
+                                       <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>\
+                                       <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\xa0</span><span class="s1">&#39;</span><span class="p">)</span>\
+                                       <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39; *+&#39;</span><span class="p">)</span>
 
-<span class="c1"># print subset of column to check that strings have been formatted correctly</span>
-<span class="n">df_countries_USDS</span><span class="p">[</span><span class="mi">30</span><span class="p">:</span><span class="mi">60</span><span class="p">]</span>
+<span class="c1"># Remove no-break space left of Eswatini country code</span>
+<span class="n">df_USDS</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;code&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_USDS</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;code&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\xa0</span><span class="s1"> &#39;</span><span class="p">)</span>
+
+<span class="c1"># Print subset of column to check that strings have been formatted correctly</span>
+<span class="n">df_USDS</span><span class="p">[</span><span class="mi">30</span><span class="p">:</span><span class="mi">60</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -15367,7 +15400,7 @@ memory usage: 7.4+ KB
     </tr>
     <tr>
       <th>33</th>
-      <td>Central African Republic</td>
+      <td>CentralAfrican Republic</td>
       <td>CF</td>
     </tr>
     <tr>
@@ -15516,10 +15549,9 @@ memory usage: 7.4+ KB
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># merge on list of independent States (left)</span>
-<span class="n">df_ef2016_countries_independent</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_countries_USDS</span><span class="p">,</span> <span class="n">df_ef2016_pivot</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Earths&#39;</span><span class="p">,</span> <span class="s1">&#39;HDI&#39;</span><span class="p">,</span> <span class="s1">&#39;population&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;code&#39;</span><span class="p">)</span>
-<span class="n">df_ef2016_countries_independent</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;country_USDS&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;country&#39;</span><span class="p">]</span>
-<span class="n">df_ef2016_countries_independent</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Merge list of independent States with list of countries in EF dataset for comparison</span>
+<span class="n">df_ef2016_merge_outer</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_USDS</span><span class="p">,</span> <span class="n">df_ef2016_pivot</span><span class="p">[[</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">]],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;code&#39;</span><span class="p">)</span>
+<span class="n">df_ef2016_merge_outer</span>
 </pre></div>
 
     </div>
@@ -15598,38 +15630,38 @@ memory usage: 7.4+ KB
       <td>...</td>
     </tr>
     <tr>
-      <th>190</th>
-      <td>Venezuela</td>
-      <td>VE</td>
-      <td>Venezuela</td>
+      <th>200</th>
+      <td>NaN</td>
+      <td>PF</td>
+      <td>French Polynesia</td>
     </tr>
     <tr>
-      <th>191</th>
-      <td>Vietnam</td>
-      <td>VN</td>
-      <td>Viet Nam</td>
+      <th>201</th>
+      <td>NaN</td>
+      <td>GP</td>
+      <td>Guadeloupe</td>
     </tr>
     <tr>
-      <th>192</th>
-      <td>Yemen</td>
-      <td>YE</td>
-      <td>Yemen</td>
+      <th>202</th>
+      <td>NaN</td>
+      <td>MQ</td>
+      <td>Martinique</td>
     </tr>
     <tr>
-      <th>193</th>
-      <td>Zambia</td>
-      <td>ZM</td>
-      <td>Zambia</td>
+      <th>203</th>
+      <td>NaN</td>
+      <td>MS</td>
+      <td>Montserrat</td>
     </tr>
     <tr>
-      <th>194</th>
-      <td>Zimbabwe</td>
-      <td>ZW</td>
-      <td>Zimbabwe</td>
+      <th>204</th>
+      <td>NaN</td>
+      <td>RE</td>
+      <td>Reunion</td>
     </tr>
   </tbody>
 </table>
-<p>195 rows × 3 columns</p>
+<p>205 rows × 3 columns</p>
 </div>
 </div>
 
@@ -15644,7 +15676,8 @@ memory usage: 7.4+ KB
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_ef2016_countries_independent</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check that merge is successful</span>
+<span class="n">df_ef2016_merge_outer</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -15662,15 +15695,15 @@ memory usage: 7.4+ KB
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-Int64Index: 195 entries, 0 to 194
+Int64Index: 205 entries, 0 to 204
 Data columns (total 3 columns):
  #   Column        Non-Null Count  Dtype 
 ---  ------        --------------  ----- 
  0   country_USDS  195 non-null    object
- 1   code          195 non-null    object
- 2   country       176 non-null    object
+ 1   code          205 non-null    object
+ 2   country       187 non-null    object
 dtypes: object(3)
-memory usage: 6.1+ KB
+memory usage: 6.4+ KB
 </pre>
 </div>
 </div>
@@ -15682,7 +15715,7 @@ memory usage: 6.1+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The table above shows that out of the 195 independent States, 176 are included in the EF dataset. The following cell displays the independent States not included in the EF dataset.</p>
+<p>The following cell displays the independent States not included in the EF dataset.</p>
 
 </div>
 </div>
@@ -15692,9 +15725,11 @@ memory usage: 6.1+ KB
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ind_countries_missing</span> <span class="o">=</span> <span class="n">df_ef2016_countries_independent</span><span class="p">[</span><span class="s1">&#39;country_USDS&#39;</span><span class="p">][</span><span class="n">df_ef2016_countries_independent</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ind_countries_missing</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Number of independent countries not included in EF dataset: {len(ind_countries_missing)}&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">missing_states</span> <span class="o">=</span> <span class="n">df_ef2016_merge_outer</span><span class="p">[</span><span class="n">df_ef2016_merge_outer</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">missing_states</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Number of independent countries not included in EF dataset:</span><span class="se">\</span>
+<span class="s1"> {len(missing_states)}&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -15711,27 +15746,27 @@ memory usage: 6.1+ KB
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>3                               Andorra
-57                             Eswatini
-74                             Holy See
-77                              Iceland
-90                             Kiribati
-93                               Kosovo
-102                       Liechtenstein
-108                            Maldives
-111                    Marshall Islands
-115     Micronesia, Federated States of
-117                              Monaco
-123                               Nauru
-134                               Palau
-146               Saint Kitts and Nevis
-148    Saint Vincent and the Grenadines
-150                          San Marino
-155                          Seychelles
-181                              Tuvalu
-189                             Vanuatu
-Name: country_USDS, dtype: object
-Number of independent countries not included in EF dataset: 19
+<pre>                         country_USDS code country
+3                             Andorra   AD     NaN
+74                           Holy See   VA     NaN
+77                            Iceland   IS     NaN
+90                           Kiribati   KI     NaN
+93                             Kosovo   XK     NaN
+102                     Liechtenstein   LI     NaN
+108                          Maldives   MV     NaN
+111                  Marshall Islands   MH     NaN
+115    Micronesia,Federated States of   FM     NaN
+117                            Monaco   MC     NaN
+123                             Nauru   NR     NaN
+134                             Palau   PW     NaN
+146             Saint Kitts and Nevis   KN     NaN
+148  Saint Vincent and the Grenadines   VC     NaN
+150                        San Marino   SM     NaN
+155                        Seychelles   SC     NaN
+181                            Tuvalu   TV     NaN
+189                           Vanuatu   VU     NaN
+
+Number of independent countries not included in EF dataset: 18
 </pre>
 </div>
 </div>
@@ -15743,8 +15778,7 @@ Number of independent countries not included in EF dataset: 19
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Eswatini (previously named Swaziland) is listed as missing despite its country code (SZ) being included in the EF dataset. This is unexplainable, the issue seems to stem from the processing of the USDS dataset list of country codes when executing the pandas merge function.</p>
-<p>So actually 177 out of the 195 independent States are included in the EF dataset. It is also interesting to check which are the 10 countries listed in the EF dataset that are not independent.</p>
+<p>It is also interesting to see which are the 10 out of the 187 countries listed in the EF dataset that are not independent.</p>
 
 </div>
 </div>
@@ -15754,137 +15788,11 @@ Number of independent countries not included in EF dataset: 19
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># merge on EF dataset countries/territories list (right)</span>
-<span class="n">df_ef2016_countries_coverage</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_countries_USDS</span><span class="p">,</span> <span class="n">df_ef2016_pivot</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Earths&#39;</span><span class="p">,</span> <span class="s1">&#39;HDI&#39;</span><span class="p">,</span> <span class="s1">&#39;population&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;code&#39;</span><span class="p">)</span>
-<span class="n">df_ef2016_countries_coverage</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;country_USDS&#39;</span><span class="p">,</span> <span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;country&#39;</span><span class="p">]</span>
-<span class="n">df_ef2016_countries_coverage</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[25]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>country_USDS</th>
-      <th>code</th>
-      <th>country</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Afghanistan</td>
-      <td>AF</td>
-      <td>Afghanistan</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Albania</td>
-      <td>AL</td>
-      <td>Albania</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Algeria</td>
-      <td>DZ</td>
-      <td>Algeria</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Angola</td>
-      <td>AO</td>
-      <td>Angola</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Antigua and Barbuda</td>
-      <td>AG</td>
-      <td>Antigua and Barbuda</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>182</th>
-      <td>Venezuela</td>
-      <td>VE</td>
-      <td>Venezuela</td>
-    </tr>
-    <tr>
-      <th>183</th>
-      <td>Vietnam</td>
-      <td>VN</td>
-      <td>Viet Nam</td>
-    </tr>
-    <tr>
-      <th>184</th>
-      <td>Yemen</td>
-      <td>YE</td>
-      <td>Yemen</td>
-    </tr>
-    <tr>
-      <th>185</th>
-      <td>Zambia</td>
-      <td>ZM</td>
-      <td>Zambia</td>
-    </tr>
-    <tr>
-      <th>186</th>
-      <td>Zimbabwe</td>
-      <td>ZW</td>
-      <td>Zimbabwe</td>
-    </tr>
-  </tbody>
-</table>
-<p>187 rows × 3 columns</p>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">additional_territories</span> <span class="o">=</span> <span class="n">df_ef2016_countries_coverage</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">][</span><span class="n">df_ef2016_countries_coverage</span><span class="p">[</span><span class="s1">&#39;country_USDS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">additional_territories</span> <span class="o">=</span> <span class="n">df_ef2016_merge_outer</span><span class="p">[</span><span class="n">df_ef2016_merge_outer</span><span class="p">[</span><span class="s1">&#39;country_USDS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">additional_territories</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Number of dependent territories included in EF dataset: {len(additional_territories)}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Number of dependent territories included in EF dataset:</span><span class="se">\</span>
+<span class="s1"> {len(additional_territories)}&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -15901,19 +15809,19 @@ Number of independent countries not included in EF dataset: 19
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>7                 Aruba
-19              Bermuda
-33       Cayman Islands
-42         Cook Islands
-63        French Guiana
-64     French Polynesia
-72           Guadeloupe
-108          Martinique
-115          Montserrat
-138             Reunion
-161           Swaziland
-Name: country, dtype: object
-Number of dependent territories included in EF dataset: 11
+<pre>    country_USDS code           country
+195          NaN   AW             Aruba
+196          NaN   BM           Bermuda
+197          NaN   KY    Cayman Islands
+198          NaN   CK      Cook Islands
+199          NaN   GF     French Guiana
+200          NaN   PF  French Polynesia
+201          NaN   GP        Guadeloupe
+202          NaN   MQ        Martinique
+203          NaN   MS        Montserrat
+204          NaN   RE           Reunion
+
+Number of dependent territories included in EF dataset: 10
 </pre>
 </div>
 </div>
@@ -15925,17 +15833,17 @@ Number of dependent territories included in EF dataset: 11
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Not counting Eswatini (Swaziland), this leaves 10 dependent territories that are included in the EF dataset. It is worth noting that an ecological footprint has been computed for them but as they are not independent states they have not been included in the UN HDI, along with North Korea and Somalia.</p>
+<p>10 dependent territories are included in the EF dataset with a computed ecological footprint. As they are not independent states they have not been included in the HDI, along with North Korea and Somalia, as shown in the table below.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># display EF dataset territories with no HDI</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Display EF dataset countries/territories with no HDI</span>
 <span class="n">df_ef2016_pivot</span><span class="p">[</span><span class="n">df_ef2016_pivot</span><span class="p">[</span><span class="s1">&#39;HDI&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span>
 </pre></div>
 
@@ -15949,7 +15857,7 @@ Number of dependent territories included in EF dataset: 11
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[27]:</div>
+    <div class="prompt output_prompt">Out[26]:</div>
 
 
 
@@ -16090,7 +15998,7 @@ Number of dependent territories included in EF dataset: 11
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now that we better understand the coverage of the dataset, it is time to move on to analyzing the distribution of the variables. Having information about the region to which each country belongs would be interesting as it would allow us to get a better overview of the geographical distribution of the scores.</p>
+<p>Now that we better understand the coverage of the dataset, it would be interesting to include information about the region to which each country belongs as it would provide a better overview of the geographical distribution of the scores of both indicators.</p>
 
 </div>
 </div>
@@ -16112,10 +16020,13 @@ Number of dependent territories included in EF dataset: 11
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_regions_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv&#39;</span><span class="p">,</span> <span class="n">keep_default_na</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># set keep_default_na to False to avoid Namibia code NA from being interpreted as NaN when merging dataframes later on</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Note: set keep_default_na to False to avoid Namibia code NA from being</span>
+<span class="c1"># interpreted as NaN when merging dataframes later on</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv&#39;</span>
+<span class="n">df_regions_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">keep_default_na</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">df_regions_raw</span>
 </pre></div>
 
@@ -16129,7 +16040,7 @@ Number of dependent territories included in EF dataset: 11
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[28]:</div>
+    <div class="prompt output_prompt">Out[27]:</div>
 
 
 
@@ -16334,7 +16245,7 @@ Number of dependent territories included in EF dataset: 11
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_regions</span> <span class="o">=</span> <span class="n">df_regions_raw</span><span class="p">[[</span><span class="s1">&#39;alpha-2&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">]]</span>
@@ -16352,7 +16263,7 @@ Number of dependent territories included in EF dataset: 11
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[29]:</div>
+    <div class="prompt output_prompt">Out[28]:</div>
 
 
 
@@ -16449,10 +16360,11 @@ Number of dependent territories included in EF dataset: 11
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># merge df_ef2016_pivot with df_regions to get continents for all countries and territories</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Merge df_ef2016_pivot with df_regions to get continents for all</span>
+<span class="c1"># countries and territories</span>
 <span class="n">df_ef2016</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_ef2016_pivot</span><span class="p">,</span> <span class="n">df_regions</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;code&#39;</span><span class="p">)</span>
 <span class="n">df_ef2016</span>
 </pre></div>
@@ -16467,7 +16379,7 @@ Number of dependent territories included in EF dataset: 11
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[30]:</div>
+    <div class="prompt output_prompt">Out[29]:</div>
 
 
 
@@ -16612,10 +16524,11 @@ Number of dependent territories included in EF dataset: 11
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_ef2016</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check that merge is successful</span>
+<span class="n">df_ef2016</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -16685,17 +16598,22 @@ memory usage: 10.2+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="n">df_ef2016</span>
 <span class="n">var_cat</span><span class="o">=</span><span class="s1">&#39;continent&#39;</span>
 <span class="n">var_num</span><span class="o">=</span><span class="s1">&#39;Earths&#39;</span>
 
-<span class="c1"># draw boxplots overlaid with stripplots of EF scores grouped by continent</span>
+<span class="c1"># Draw boxplots overlaid with stripplots of EF scores grouped by continent</span>
+<span class="c1"># Note: the boxplots are drawn with whiskers that reach out to farthest</span>
+<span class="c1"># data point within the interval contained by the 5th and 95th percentiles</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">var_cat</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">var_num</span><span class="p">,</span> <span class="n">whis</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">95</span><span class="p">),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">saturation</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">var_cat</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">var_num</span><span class="p">,</span> <span class="n">whis</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">95</span><span class="p">),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">saturation</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">stripplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">var_cat</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">var_num</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># Add horizontal line for one planet limit and additional formatting</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Continent&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Earths&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
@@ -16738,7 +16656,7 @@ memory usage: 10.2+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_ef2016</span><span class="p">[(</span><span class="n">df_ef2016</span><span class="p">[</span><span class="s1">&#39;Earths&#39;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_ef2016</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Americas&#39;</span><span class="p">)]</span>
@@ -16754,7 +16672,7 @@ memory usage: 10.2+ KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[33]:</div>
+    <div class="prompt output_prompt">Out[32]:</div>
 
 
 
@@ -16827,7 +16745,7 @@ memory usage: 10.2+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Many Asian and African countries appear to be within the planet's limits. These can be identified in another figure further below.</p>
+<p>Many Asian and African countries appear to be within the planet's limits. These can be identified in the scatterplot further below.</p>
 <p>African countries are very frugal in their consumption, very few exceed the 2 Earths mark:</p>
 
 </div>
@@ -16835,7 +16753,7 @@ memory usage: 10.2+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_ef2016</span><span class="p">[(</span><span class="n">df_ef2016</span><span class="p">[</span><span class="s1">&#39;Earths&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_ef2016</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Africa&#39;</span><span class="p">)]</span>
@@ -16851,7 +16769,7 @@ memory usage: 10.2+ KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[34]:</div>
+    <div class="prompt output_prompt">Out[33]:</div>
 
 
 
@@ -16931,7 +16849,7 @@ memory usage: 10.2+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_ef2016</span><span class="p">[</span><span class="n">df_ef2016</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Asia&#39;</span><span class="p">][</span><span class="s1">&#39;Earths&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -16947,7 +16865,7 @@ memory usage: 10.2+ KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[35]:</div>
+    <div class="prompt output_prompt">Out[34]:</div>
 
 
 
@@ -16979,17 +16897,20 @@ Name: Earths, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="n">df_ef2016</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">)</span> <span class="c1"># drop rows with NaN (present only in HDI column)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="n">df_ef2016</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">)</span> <span class="c1"># Drop rows with NaN (present only in HDI column)</span>
 <span class="n">var_cat</span><span class="o">=</span><span class="s1">&#39;continent&#39;</span>
 <span class="n">var_num</span><span class="o">=</span><span class="s1">&#39;HDI&#39;</span>
 
-<span class="c1"># draw boxplots overlaid with stripplots of HDI scores grouped by continent</span>
+<span class="c1"># Draw boxplots overlaid with stripplots of HDI scores grouped by continent</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">var_cat</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">var_num</span><span class="p">,</span> <span class="n">whis</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">95</span><span class="p">),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">saturation</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">var_cat</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">var_num</span><span class="p">,</span> <span class="n">whis</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">95</span><span class="p">),</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">fliersize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">saturation</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">stripplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">var_cat</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">var_num</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># Additional formatting</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Continent&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;HDI&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">();</span>
@@ -17031,11 +16952,12 @@ Name: Earths, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># HDI scores bottom 5% of each continent</span>
-<span class="n">df_ef2016</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">df</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;HDI&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;HDI&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)])</span>
+<span class="n">df_ef2016</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span>\
+         <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">df</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;HDI&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;HDI&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)])</span>
 </pre></div>
 
     </div>
@@ -17048,7 +16970,7 @@ Name: Earths, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[37]:</div>
+    <div class="prompt output_prompt">Out[36]:</div>
 
 
 
@@ -17217,11 +17139,12 @@ Name: Earths, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># HDI scores top 5% of each continent</span>
-<span class="n">df_ef2016</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">df</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;HDI&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;HDI&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.95</span><span class="p">)])</span>
+<span class="n">df_ef2016</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span>\
+         <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">df</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;HDI&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;HDI&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.95</span><span class="p">)])</span>
 </pre></div>
 
     </div>
@@ -17234,7 +17157,7 @@ Name: Earths, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[38]:</div>
+    <div class="prompt output_prompt">Out[37]:</div>
 
 
 
@@ -17401,11 +17324,14 @@ Name: Earths, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">base</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_ef2016</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Draw interactive scatterplot of EF vs HDI using Altair library</span>
 
+<span class="n">base</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_ef2016</span><span class="p">)</span>
+
+<span class="c1"># Draw circles</span>
 <span class="n">circle</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">clip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;HDI&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Human Development Index 2016&#39;</span><span class="p">),</span>
     <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;Earths&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Ecological Footprint (Earths equivalent)&#39;</span><span class="p">),</span>
@@ -17419,12 +17345,14 @@ Name: Earths, dtype: float64</pre>
     <span class="n">height</span><span class="o">=</span><span class="mi">400</span>
 <span class="p">)</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
 
+<span class="c1"># Draw horizontal dashed line</span>
 <span class="n">Earth_limit</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">]}))</span><span class="o">.</span><span class="n">mark_rule</span><span class="p">(</span>
     <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#808080&quot;</span><span class="p">,</span>
     <span class="n">strokeDash</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 <span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
 
+<span class="c1"># Draw vertical dashed line</span>
 <span class="n">HDI_median</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">mark_rule</span><span class="p">(</span>
     <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#808080&quot;</span><span class="p">,</span>
     <span class="n">strokeDash</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
@@ -17445,18 +17373,18 @@ Name: Earths, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[39]:</div>
+    <div class="prompt output_prompt">Out[38]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 
-<div id="altair-viz-c4ed431c1f244ed8b78cf4f4fbac69d4"></div>
+<div id="altair-viz-50311f6ca3594031acc4ff6a12d7a8c3"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c4ed431c1f244ed8b78cf4f4fbac69d4") {
-      outputDiv = document.getElementById("altair-viz-c4ed431c1f244ed8b78cf4f4fbac69d4");
+    if (outputDiv.id !== "altair-viz-50311f6ca3594031acc4ff6a12d7a8c3") {
+      outputDiv = document.getElementById("altair-viz-50311f6ca3594031acc4ff6a12d7a8c3");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -17512,7 +17440,7 @@ Name: Earths, dtype: float64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The horizontal dashed line marks the one planet limit. The vertical dashed line marks the median HDI. Nearly all countries consuming resources within Earth's total biocapacity score low on the HDI. The only exception is Sri Lanka which has an HDI score of 0.77 while maintaining consumption at a sustainable level. It is followed by Jamaica with an HDI score of 0.73 just below the median HDI. All other countries in the the top half of HDI scores are consuming resources at an unsustainable level.</p>
-<p>The duty of policy-makers and other development stakeholders is to shift countries to the bottom-right quadrant. This means those in high-consumption countries must put in place policies to decrease resource use, while those in low-consumption countries must find alternative ways to increase health, education and standard of living, as they cannot follow the same development path of high-consumption countries.</p>
+<p>The duty of policy-makers and other development stakeholders is to shift countries to the bottom-right quadrant. This means that those in high-consumption countries must put in place policies to decrease resource use, while those in low-consumption countries must find alternative ways to increase health, education and standard of living, as they cannot follow the development path of high-consumption countries.</p>
 <p>In facing these challenges, it can be interesting to look more closely at which countries are the most efficient in resource consumption relative to their HDI score. Knowing which countries are most resource-efficient per HDI point may bring to light successful policies that may serve as examples for others. The development efficiency indicator is computed in the next section to identify those countries.</p>
 
 </div>
@@ -17527,7 +17455,7 @@ Name: Earths, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_ef2016</span><span class="p">[</span><span class="s1">&#39;development_efficiency&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_ef2016</span><span class="p">[</span><span class="s1">&#39;HDI&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">df_ef2016</span><span class="p">[</span><span class="s1">&#39;Earths&#39;</span><span class="p">]</span>
@@ -17544,7 +17472,7 @@ Name: Earths, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[40]:</div>
+    <div class="prompt output_prompt">Out[39]:</div>
 
 
 
@@ -17569,10 +17497,14 @@ Name: development_efficiency, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hist_align_bins</span><span class="p">(</span><span class="n">variable</span><span class="o">=</span><span class="n">df_ef2016</span><span class="p">[</span><span class="s1">&#39;development_efficiency&#39;</span><span class="p">],</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Development Efficiency (HDI/Earths)&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Distribution of development Efficiency scores&#39;</span><span class="p">,</span> <span class="n">bin_width</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Draw development efficiency histogram</span>
+<span class="n">hist_align_bins</span><span class="p">(</span><span class="n">variable</span><span class="o">=</span><span class="n">df_ef2016</span><span class="p">[</span><span class="s1">&#39;development_efficiency&#39;</span><span class="p">],</span>
+                <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;Development Efficiency (HDI/Earths)&#39;</span><span class="p">,</span>
+                <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Distribution of Development Efficiency scores&#39;</span><span class="p">,</span>
+                <span class="n">bin_width</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -17603,10 +17535,11 @@ Name: development_efficiency, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_ef2016</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;development_efficiency&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Development efficienty top 10</span>
+<span class="n">df_ef2016</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;development_efficiency&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -17619,7 +17552,7 @@ Name: development_efficiency, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[42]:</div>
+    <div class="prompt output_prompt">Out[41]:</div>
 
 
 
@@ -17773,11 +17706,11 @@ Name: development_efficiency, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># select countries with near and above median HDI</span>
-<span class="n">df_ef2016</span><span class="p">[</span><span class="n">df_ef2016</span><span class="p">[</span><span class="s1">&#39;HDI&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.7</span><span class="p">]</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;development_efficiency&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Select top 10 countries with near and above median HDI</span>
+<span class="n">df_ef2016</span><span class="p">[</span><span class="n">df_ef2016</span><span class="p">[</span><span class="s1">&#39;HDI&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.7</span><span class="p">]</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;development_efficiency&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -17790,7 +17723,7 @@ Name: development_efficiency, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[43]:</div>
+    <div class="prompt output_prompt">Out[42]:</div>
 
 
 
@@ -17938,7 +17871,7 @@ Name: development_efficiency, dtype: float64</pre>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As observed in the scatterplot, only Sri Lanka and Jamaica are within the one planet limit, with a near-median HDI. Uruguay stands out as the only country reaching the 0.8 HDI mark. Albania makes it in the list as the only European country and, along with the last three countries in the list, it is considered as an economy in transition by the United Nations country classification in the <a href="https://www.un.org/development/desa/dpad/wp-content/uploads/sites/45/WESP2019_BOOK-ANNEX-en.pdf">World Economic Situation and Prospects report from 2019</a>. The other 6 countries are considered to be developing economies.</p>
-<p>Each of these countries would have to be studied further to better understand how they score on the HDI in such a resource-efficient manner. Some of them may have policies in place that could serve as examples of good practice for other countries facing similar challenges.</p>
+<p>Each of these countries would have to be studied further to better understand how they score so high on the HDI in such a resource-efficient manner. Some of them may have policies in place that could serve as examples of good practice for other countries facing similar challenges.</p>
 
 </div>
 </div>
@@ -17946,17 +17879,18 @@ Name: development_efficiency, dtype: float64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Finally, we can have a look at what countries are the least resource efficient relative to HDI:</p>
+<p>Finally, we can have a look at what countries are the least resource efficient relative to the HDI:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_ef2016</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;development_efficiency&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Development efficiency bottom 10</span>
+<span class="n">df_ef2016</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;development_efficiency&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -17969,7 +17903,7 @@ Name: development_efficiency, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[44]:</div>
+    <div class="prompt output_prompt">Out[43]:</div>
 
 
 
@@ -18116,7 +18050,7 @@ Name: development_efficiency, dtype: float64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>These are mainly oil producing countries with the exception of Luxembourg. These countries would have to be investigated further to better understand why they make it into this list.</p>
+<p>These are mainly fossil fuel producing countries with the exception of Luxembourg. These countries would have to be investigated further to better understand why they make it into this list.</p>
 
 </div>
 </div>
@@ -18131,8 +18065,8 @@ Name: development_efficiency, dtype: float64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This short analysis has shed some light on the position of countries relative to their ecological footprint and their level of development. Sri Lanka has stood out from the rest as being the only country with a sustainable level resource consumption while achieving an above-median score on the HDI. None of the countries among what are considered as developed economies according to the United Nations are even close to the one planet limit, most are well bove the 2 Earths mark, with the exception of Romania.</p>
-<p>This goes to show that all countries still have a lot of work to accomplish in order to achieve a sustainable level of development on both social and environmental issues. As the UN Sustainable Development Goals are becoming the new benchmark for assessing the level of development of countries, one could question the use of the classification 'developed', 'in transition', and 'developing', as the scores on the ecological footprint clearly show that the so-called developed countries still have a way to go to achieve a truly sustainable level of consumption that ensures a high standard of living.</p>
+<p>This analysis has shed some light on the situation of countries regarding their ecological footprint and their level of development. Sri Lanka stands out as being the only country with a sustainable level resource consumption while achieving an above-median score on the HDI. None of the countries among what are considered as developed economies according to the United Nations are even close to the one planet limit, most are well above the 2 Earths mark, with the exception of Romania.</p>
+<p>This goes to show that all countries still have a lot of work to do in order to achieve a sustainable level of development on both social and environmental issues. As the UN Sustainable Development Goals are becoming the new benchmark for assessing the level of development of countries, one could question the use of the classification 'developed', 'in transition', and 'developing', as the scores on the ecological footprint clearly show that the so-called developed countries still have a way to go in order to achieve a sustainable level of consumption while maintaining a high standard of living.</p>
 
 </div>
 </div>
