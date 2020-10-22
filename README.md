@@ -1,6 +1,7 @@
 # Data Analysis Portfolio
 This repository contains data analysis projects stored as notebooks created with Jupyter Notebook.
 
+<br>
 
 ## [Exploratory Data Analysis in Python][html_EDA]
 [Open notebook][html_EDA]
@@ -15,6 +16,7 @@ Alternative links:
 [nbviewer_EDA]: https://nbviewer.jupyter.org/github/patrickwfitzgerald/portfolio/blob/main/exploratory-data-analysis-python/Exploratory%20Data%20Analysis%20in%20Python.ipynb
 [GitHub_EDA]: https://github.com/patrickwfitzgerald/portfolio/blob/main/exploratory-data-analysis-python/Exploratory%20Data%20Analysis%20in%20Python.ipynb
 
+<br>
 
 ## [Ecological Footprint and Human Development Index][html_EF]
 [Open notebook][html_EF]
@@ -29,7 +31,7 @@ Alternative links:
 [nbviewer_EF]: https://nbviewer.jupyter.org/github/patrickwfitzgerald/portfolio/blob/9a2b0eef31343ef17c012e8743d0dd14ff542906/ecological-footprint-countries/Ecological%20Footprint%20and%20Human%20Development%20Index.ipynb
 [GitHub_EF]: https://github.com/patrickwfitzgerald/portfolio/blob/main/ecological-footprint-countries/Ecological%20Footprint%20and%20Human%20Development%20Index.ipynb
 
-
+<br>
 
 ## License
 
