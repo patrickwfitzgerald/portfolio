@@ -6,7 +6,7 @@ Open notebook: [html][html_EDA], [nbviewer][nbviewer_EDA], [GitHub][GitHub_EDA]
 
 This notebook illustrates the process of exploratory data analysis with Jupyter Notebook using Python. A sample dataset from the seaborn package is analyzed using a systematic approach to visualize the distribution of variables and associations between variables. This approach can be applied to any other dataset containing similar types of variables.
 
-[html_EDA]: /exploratory-data-analysis-python/html%20file/Exploratory%20Data%20Analysis%20in%20Python.html
+[html_EDA]: /portfolio/exploratory-data-analysis-python/html%20file/Exploratory%20Data%20Analysis%20in%20Python.html
 [nbviewer_EDA]: https://nbviewer.jupyter.org/github/patrickwfitzgerald/portfolio/blob/main/exploratory-data-analysis-python/Exploratory%20Data%20Analysis%20in%20Python.ipynb
 [GitHub_EDA]: https://github.com/patrickwfitzgerald/portfolio/blob/main/exploratory-data-analysis-python/Exploratory%20Data%20Analysis%20in%20Python.ipynb
 
