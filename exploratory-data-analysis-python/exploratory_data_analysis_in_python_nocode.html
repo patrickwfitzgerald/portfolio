@@ -13142,31 +13142,6 @@ li{
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#1.-Introduction" data-toc-modified-id="1.-Introduction-1">1. Introduction</a></span></li><li><span><a href="#2.-Dataset-overview" data-toc-modified-id="2.-Dataset-overview-2">2. Dataset overview</a></span><ul class="toc-item"><li><span><a href="#2.1-Numerical-variables:-descriptive-statistics-and-distribution" data-toc-modified-id="2.1-Numerical-variables:-descriptive-statistics-and-distribution-2.1">2.1 Numerical variables: descriptive statistics and distribution</a></span></li><li><span><a href="#2.2-Categorical-variables:-descriptive-statistics-and-distribution" data-toc-modified-id="2.2-Categorical-variables:-descriptive-statistics-and-distribution-2.2">2.2 Categorical variables: descriptive statistics and distribution</a></span></li></ul></li><li><span><a href="#3.-Numerical-variables-relationships" data-toc-modified-id="3.-Numerical-variables-relationships-3">3. Numerical variables relationships</a></span></li><li><span><a href="#4.-Numerical-categorical-relationships" data-toc-modified-id="4.-Numerical-categorical-relationships-4">4. Numerical-categorical relationships</a></span></li><li><span><a href="#5.-Categorical-variables-relationships" data-toc-modified-id="5.-Categorical-variables-relationships-5">5. Categorical variables relationships</a></span></li><li><span><a href="#6.-Further-analysis" data-toc-modified-id="6.-Further-analysis-6">6. Further analysis</a></span><ul class="toc-item"><li><span><a href="#6.1-Question-1---Men-vs-women-tip-rate" data-toc-modified-id="6.1-Question-1---Men-vs-women-tip-rate-6.1">6.1 Question 1 - Men vs women tip rate</a></span></li><li><span><a href="#6.2-Question-2---Smoker-vs-non-smoker-parties-tip-rate" data-toc-modified-id="6.2-Question-2---Smoker-vs-non-smoker-parties-tip-rate-6.2">6.2 Question 2 - Smoker vs non-smoker parties tip rate</a></span></li><li><span><a href="#6.3-Question-3---Impact-of-tip-rate-decrease-with-size-of-party" data-toc-modified-id="6.3-Question-3---Impact-of-tip-rate-decrease-with-size-of-party-6.3">6.3 Question 3 - Impact of tip rate decrease with size of party</a></span></li></ul></li><li><span><a href="#7.-Conclusion" data-toc-modified-id="7.-Conclusion-7">7. Conclusion</a></span></li></ul></div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="1.-Introduction">1. Introduction<a class="anchor-link" href="#1.-Introduction">&#182;</a></h1><p>The goal of this notebook is to illustrate the process of exploratory data analysis (EDA) with Jupyter Notebook using Python. Carrying out an EDA using Jupyter Notebook provides several advantages that other data analysis software may lack:</p>
-<ul>
-<li>The data analysis process is presented in its entirety, in chronological order and in a readable way thanks to the inclusion of comments between data processing steps.</li>
-<li>The original dataset can be updated and the analysis can be repeated without any changes having to be made.</li>
-<li>A new dataset containing similar types of variables can be analyzed using the same notebook requiring only a few changes in variable names, which is easily done using the convenient find and replace utility.</li>
-</ul>
-<p>These features make Jupyter Notebook an ideal tool to carry out, share and reproduce data analyses.</p>
-<p>This notebook demonstrates how easy it is to get an overview of a clean dataset and to visualize and identify relationships between variables in a dataset using a systematic approach. This is why a sample dataset contained in a Python package will be used rather than extracting a raw dataset from a primary source seeing as accessing and preparing a dataset for analysis often constitutes the bulk of the work.</p>
-<p>Several functions are created in this notebook to significantly improve on existing plotting functions and make it easier to quickly review the data. Of course writing these functions initially takes a bit of time, but the point is that they can be easily reused on any other dataset and packaged into a module and they are all that is needed to get a quick and complete overview of all the variables contained in the dataset.</p>
-<p>It is also worth noting here that there exists at least two Python packages that offer tools for EDA that are worth checking out: <a href="https://pypi.org/project/pandas-profiling/">Pandas Profiling</a> and <a href="https://pypi.org/project/sweetviz/">Sweetviz</a>.</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
@@ -13187,6 +13162,31 @@ seaborn              0.11.0
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
+<div class="toc"><ul class="toc-item"><li><span><a href="#1.-Introduction" data-toc-modified-id="1.-Introduction-1">1. Introduction</a></span></li><li><span><a href="#2.-Dataset-overview" data-toc-modified-id="2.-Dataset-overview-2">2. Dataset overview</a></span><ul class="toc-item"><li><span><a href="#2.1-Numerical-variables:-descriptive-statistics-and-distribution" data-toc-modified-id="2.1-Numerical-variables:-descriptive-statistics-and-distribution-2.1">2.1 Numerical variables: descriptive statistics and distribution</a></span></li><li><span><a href="#2.2-Categorical-variables:-descriptive-statistics-and-distribution" data-toc-modified-id="2.2-Categorical-variables:-descriptive-statistics-and-distribution-2.2">2.2 Categorical variables: descriptive statistics and distribution</a></span></li></ul></li><li><span><a href="#3.-Numerical-variables-relationships" data-toc-modified-id="3.-Numerical-variables-relationships-3">3. Numerical variables relationships</a></span></li><li><span><a href="#4.-Numerical-categorical-relationships" data-toc-modified-id="4.-Numerical-categorical-relationships-4">4. Numerical-categorical relationships</a></span></li><li><span><a href="#5.-Categorical-variables-relationships" data-toc-modified-id="5.-Categorical-variables-relationships-5">5. Categorical variables relationships</a></span></li><li><span><a href="#6.-Further-analysis" data-toc-modified-id="6.-Further-analysis-6">6. Further analysis</a></span><ul class="toc-item"><li><span><a href="#6.1-Question-1---Men-vs-women-tip-rate" data-toc-modified-id="6.1-Question-1---Men-vs-women-tip-rate-6.1">6.1 Question 1 - Men vs women tip rate</a></span></li><li><span><a href="#6.2-Question-2---Smoker-vs-non-smoker-parties-tip-rate" data-toc-modified-id="6.2-Question-2---Smoker-vs-non-smoker-parties-tip-rate-6.2">6.2 Question 2 - Smoker vs non-smoker parties tip rate</a></span></li><li><span><a href="#6.3-Question-3---Impact-of-tip-rate-decrease-with-size-of-party" data-toc-modified-id="6.3-Question-3---Impact-of-tip-rate-decrease-with-size-of-party-6.3">6.3 Question 3 - Impact of tip rate decrease with size of party</a></span></li></ul></li><li><span><a href="#7.-Conclusion" data-toc-modified-id="7.-Conclusion-7">7. Conclusion</a></span></li></ul></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="1.-Introduction">1. Introduction<a class="anchor-link" href="#1.-Introduction">&#182;</a></h1><p>The goal of this notebook is to illustrate the process of exploratory data analysis (EDA) with Jupyter Notebook using Python. Carrying out an EDA using Jupyter Notebook provides several advantages that other data analysis software may lack:</p>
+<ul>
+<li>The data analysis process is presented in its entirety, in chronological order and in a readable way thanks to the inclusion of comments between data processing steps.</li>
+<li>The original dataset can be updated and the analysis can be repeated without any changes having to be made.</li>
+<li>A new dataset containing similar types of variables can be analyzed using the same notebook requiring only a few changes in variable names, which is easily done using the convenient find and replace utility.</li>
+</ul>
+<p>These features make Jupyter Notebook an ideal tool to carry out, share and reproduce data analyses.</p>
+<p>This notebook demonstrates how easy it is to get an overview of a clean dataset and to visualize and identify relationships between variables in a dataset using a systematic approach. This is why a sample dataset contained in a Python package will be used rather than extracting a raw dataset from a primary source seeing as accessing and preparing a dataset for analysis often constitutes the bulk of the work.</p>
+<p>Several functions are created in this notebook to significantly improve on existing plotting functions and make it easier to quickly review the data. Of course writing these functions initially takes a bit of time, but the point is that they can be easily reused on any other dataset and packaged into a module and they are all that is needed to get a quick and complete overview of all the variables contained in the dataset.</p>
+<p>It is also worth noting here that there exists several Python packages that offer useful tools for EDA: <a href="https://pypi.org/project/pandas-profiling/">Pandas Profiling</a>, <a href="https://pypi.org/project/sweetviz/">Sweetviz</a> and <a href="https://sfu-db.github.io/dataprep/">DataPrep</a> are worth checking out.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">

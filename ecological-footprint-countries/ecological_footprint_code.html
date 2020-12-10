@@ -13178,32 +13178,6 @@ li{
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#1.-Introduction" data-toc-modified-id="1.-Introduction-1">1. Introduction</a></span></li><li><span><a href="#2.-Data-extraction-and-preparation" data-toc-modified-id="2.-Data-extraction-and-preparation-2">2. Data extraction and preparation</a></span><ul class="toc-item"><li><span><a href="#2.1-Import-data-through-the-GFN-API" data-toc-modified-id="2.1-Import-data-through-the-GFN-API-2.1">2.1 Import data through the GFN API</a></span></li><li><span><a href="#2.2-Import-list-of-independent-States-by-scraping-online-HTML-table" data-toc-modified-id="2.2-Import-list-of-independent-States-by-scraping-online-HTML-table-2.2">2.2 Import list of independent States by scraping online HTML table</a></span></li><li><span><a href="#2.3-Import-list-of-countries-with-regions-from-GitHub-repository" data-toc-modified-id="2.3-Import-list-of-countries-with-regions-from-GitHub-repository-2.3">2.3 Import list of countries with regions from GitHub repository</a></span></li></ul></li><li><span><a href="#3.-Data-analysis" data-toc-modified-id="3.-Data-analysis-3">3. Data analysis</a></span><ul class="toc-item"><li><span><a href="#3.1-Ecological-Footprint-by-continent" data-toc-modified-id="3.1-Ecological-Footprint-by-continent-3.1">3.1 Ecological Footprint by continent</a></span></li><li><span><a href="#3.2-Human-Development-Index-by-continent" data-toc-modified-id="3.2-Human-Development-Index-by-continent-3.2">3.2 Human Development Index by continent</a></span></li><li><span><a href="#3.3-Ecological-Footprint-vs-Human-Development-Index" data-toc-modified-id="3.3-Ecological-Footprint-vs-Human-Development-Index-3.3">3.3 Ecological Footprint vs Human Development Index</a></span></li><li><span><a href="#3.4-Development-efficiency" data-toc-modified-id="3.4-Development-efficiency-3.4">3.4 Development efficiency</a></span></li></ul></li><li><span><a href="#4.-Conclusion" data-toc-modified-id="4.-Conclusion-4">4. Conclusion</a></span></li></ul></div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="1.-Introduction">1. Introduction<a class="anchor-link" href="#1.-Introduction">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The goal of this data analysis is to study the relationship between the ecological footprint (EF) and the Human Development Index (HDI) of countries worldwide using the latest data available which dates from 2016 (as of October 2020).</p>
-<p>The EF measures the surface area needed to provide the resources necessary to meet consumer demand in any given country. This includes the surface area used for food crops, fiber production, timber regeneration, absorption of  carbon dioxide emissions from fossil fuel burning, and built infrastructure. Imports and exports are taken into account. Further details can be found <a href="https://www.footprintnetwork.org/resources/data/">here</a>. This indicator is provided by the <em>Global Footprint Network</em> (GFN), a non-profit organization whose mission is to help end ecological overshoot by making ecological limits central to decision-making.</p>
-<p>The HDI measures the level of development of a country by combining indices that assess three key dimensions: health, education and standard of living. Health is assessed by life expectancy at birth, education is measured by mean of years of schooling for adults aged 25 years and more and expected years of schooling for children of school entering age. Standard of living is measured by gross national income per capita. Further details can be found <a href="http://hdr.undp.org/en/content/human-development-index-hdi">here</a>. The HDI is calculated by the <em>United Nations Development Programme</em> using data from various sources.</p>
-<p>This notebook presents the entire data analysis process starting with the extraction of the raw data from online sources, followed by data preparation operations and finishing with a few descriptive graphs, the one of key interest being the scatterplot showing the relationship betweenship ecological footprint and the HDI for countries worldwide.</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
@@ -13261,6 +13235,32 @@ altair               4.1.0
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
+<div class="toc"><ul class="toc-item"><li><span><a href="#1.-Introduction" data-toc-modified-id="1.-Introduction-1">1. Introduction</a></span></li><li><span><a href="#2.-Data-extraction-and-preparation" data-toc-modified-id="2.-Data-extraction-and-preparation-2">2. Data extraction and preparation</a></span><ul class="toc-item"><li><span><a href="#2.1-Import-data-through-the-GFN-API" data-toc-modified-id="2.1-Import-data-through-the-GFN-API-2.1">2.1 Import data through the GFN API</a></span></li><li><span><a href="#2.2-Import-list-of-independent-States-by-scraping-online-HTML-table" data-toc-modified-id="2.2-Import-list-of-independent-States-by-scraping-online-HTML-table-2.2">2.2 Import list of independent States by scraping online HTML table</a></span></li><li><span><a href="#2.3-Import-list-of-countries-with-regions-from-GitHub-repository" data-toc-modified-id="2.3-Import-list-of-countries-with-regions-from-GitHub-repository-2.3">2.3 Import list of countries with regions from GitHub repository</a></span></li></ul></li><li><span><a href="#3.-Data-analysis" data-toc-modified-id="3.-Data-analysis-3">3. Data analysis</a></span><ul class="toc-item"><li><span><a href="#3.1-Ecological-Footprint-by-continent" data-toc-modified-id="3.1-Ecological-Footprint-by-continent-3.1">3.1 Ecological Footprint by continent</a></span></li><li><span><a href="#3.2-Human-Development-Index-by-continent" data-toc-modified-id="3.2-Human-Development-Index-by-continent-3.2">3.2 Human Development Index by continent</a></span></li><li><span><a href="#3.3-Ecological-Footprint-vs-Human-Development-Index" data-toc-modified-id="3.3-Ecological-Footprint-vs-Human-Development-Index-3.3">3.3 Ecological Footprint vs Human Development Index</a></span></li><li><span><a href="#3.4-Development-efficiency" data-toc-modified-id="3.4-Development-efficiency-3.4">3.4 Development efficiency</a></span></li></ul></li><li><span><a href="#4.-Conclusion" data-toc-modified-id="4.-Conclusion-4">4. Conclusion</a></span></li></ul></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="1.-Introduction">1. Introduction<a class="anchor-link" href="#1.-Introduction">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The goal of this data analysis is to study the relationship between the ecological footprint (EF) and the Human Development Index (HDI) of countries worldwide using the latest data available which dates from 2016 (as of October 2020).</p>
+<p>The EF measures the surface area needed to provide the resources necessary to meet consumer demand in any given country. This includes the surface area used for food crops, fiber production, timber regeneration, absorption of  carbon dioxide emissions from fossil fuel burning, and built infrastructure. Imports and exports are taken into account. Further details can be found <a href="https://www.footprintnetwork.org/resources/data/">here</a>. This indicator is provided by the <em>Global Footprint Network</em> (GFN), a non-profit organization whose mission is to help end ecological overshoot by making ecological limits central to decision-making.</p>
+<p>The HDI measures the level of development of a country by combining indices that assess three key dimensions: health, education and standard of living. Health is assessed by life expectancy at birth, education is measured by mean of years of schooling for adults aged 25 years and more and expected years of schooling for children of school entering age. Standard of living is measured by gross national income per capita. Further details can be found <a href="http://hdr.undp.org/en/content/human-development-index-hdi">here</a>. The HDI is calculated by the <em>United Nations Development Programme</em> using data from various sources.</p>
+<p>This notebook presents the entire data analysis process starting with the extraction of the raw data from online sources, followed by data preparation operations and finishing with a few descriptive graphs, the one of key interest being the scatterplot showing the relationship betweenship ecological footprint and the HDI for countries worldwide.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">

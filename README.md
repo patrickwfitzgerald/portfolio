@@ -45,7 +45,7 @@ Alternative links:
 
 This is a template notebook created to greatly speed up the exploratory data analysis process of
 data science projects. Once a dataset is imported and cleaned, running all the cells in the notebook
-prints out a concise overview of the variables it contains. The plots implement the visualization
+prints out an overview of the variables it contains. The plots implement the visualization
 principles of Edward Tufte and Stephen Few and are inspired by the capabilities of the seaborn
 package which provides the very useful pairplot function that displays all numerical-numerical relationships
 in a single plot. Unfortunately, this package lacks functions to deal with numerical-categorical and
@@ -54,20 +54,20 @@ categorical-categorical relationships in a similar manner. There exists other pa
 types of visualizations. So this notebook attempts to fill this gap by making use of advanced plotting
 functions that provide a concise visual overview of any dataset within a few seconds.
 
-This notebook handles best datasets which contain fewer than about 15 variables of which at least one
+Currently, this notebook handles datasets which contain fewer than about 15 variables of which at least one
 must be numerical. It designed to be viewed on a white background. It is under continous development
-as I work on analyzing new datasets. Future steps may include converting plots to interactive plots using
-packages such as plotly, including extra steps to deal with datasets containing many variables, and
-better processing of time series.
+as I work on analyzing new datasets. Future updates may include converting plots to interactive plots using
+packages such as plotly, adding steps to deal with datasets containing many variables, and processing time
+series more thoroughly.
 
 Alternative links:
 - [Open notebook in nbviewer][nbviewer_auto_EDA]
 - [Open notebook file location in GitHub repository][GitHub_auto_EDA]
 
-[html_auto_EDA_code]: https://patrickwfitzgerald.github.io/portfolio/automated_eda/automated_eda_code.html
-[html_auto_EDA_nocode]: https://patrickwfitzgerald.github.io/portfolio/automated_eda/automated_eda_nocode.html
-[nbviewer_auto_EDA]: https://nbviewer.jupyter.org/github/patrickwfitzgerald/portfolio/blob/main/automated_eda/automated_eda.ipynb
-[GitHub_auto_EDA]: https://github.com/patrickwfitzgerald/portfolio/blob/main/automated_eda/automated_eda.ipynb
+[html_auto_EDA_code]: https://patrickwfitzgerald.github.io/portfolio/automated-eda/automated_eda_code.html
+[html_auto_EDA_nocode]: https://patrickwfitzgerald.github.io/portfolio/automated-eda/automated_eda_nocode.html
+[nbviewer_auto_EDA]: https://nbviewer.jupyter.org/github/patrickwfitzgerald/portfolio/blob/main/automated-eda/automated_eda.ipynb
+[GitHub_auto_EDA]: https://github.com/patrickwfitzgerald/portfolio/blob/main/automated-eda/automated_eda.ipynb
 
 [link_pprof]: https://pandas-profiling.github.io/pandas-profiling/docs/master/rtd/
 [link_sv]: https://github.com/fbdesignpro/sweetviz
