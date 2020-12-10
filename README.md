@@ -64,6 +64,8 @@ Alternative links:
 - [Open notebook in nbviewer][nbviewer_auto_EDA]
 - [Open notebook file location in GitHub repository][GitHub_auto_EDA]
 
+[html_auto_EDA_code]: https://patrickwfitzgerald.github.io/portfolio/automated-EDA/automated_EDA_code.html
+[html_auto_EDA_nocode]: https://patrickwfitzgerald.github.io/portfolio/automated-EDA/automated_EDA_nocode.html
 [nbviewer_auto_EDA]: https://nbviewer.jupyter.org/github/patrickwfitzgerald/portfolio/blob/main/automated-EDA/automated_EDA.ipynb
 [GitHub_auto_EDA]: https://github.com/patrickwfitzgerald/portfolio/blob/main/automated-EDA/automated_EDA.ipynb
 
