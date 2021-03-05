@@ -50,7 +50,7 @@ principles of Edward Tufte and Stephen Few and are inspired by the capabilities 
 package which provides the very useful pairplot function that displays all numerical-numerical relationships
 in a single plot. Unfortunately, this package lacks functions to deal with numerical-categorical and
 categorical-categorical relationships in a similar manner. There exists other packages such as [Pandas Profiling][link_pprof],
-[Sweetviz][link_sv] and [DataPrep][link_dp] which provide useful EDA tools, but these also lack these
+[Sweetviz][link_sv] and [DataPrep][link_dp] which provide useful EDA tools, but they also lack these
 types of visualizations. So this notebook attempts to fill this gap by making use of advanced plotting
 functions that provide a concise visual overview of any dataset within a few seconds.
 
@@ -74,7 +74,7 @@ Alternative links:
 [link_dp]: https://sfu-db.github.io/dataprep/index.html
 
 <br>
-
+ 
 ## License
 
 ### Code
